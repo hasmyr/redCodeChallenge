@@ -1,0 +1,12 @@
+C:\Code\redCodeChallenge\RED.CodeChallenge\RED.CodeChallenge.Models\bin\Debug\net6.0\RED.CodeChallenge.Models.deps.json
+C:\Code\redCodeChallenge\RED.CodeChallenge\RED.CodeChallenge.Models\bin\Debug\net6.0\RED.CodeChallenge.Models.dll
+C:\Code\redCodeChallenge\RED.CodeChallenge\RED.CodeChallenge.Models\bin\Debug\net6.0\RED.CodeChallenge.Models.pdb
+C:\Code\redCodeChallenge\RED.CodeChallenge\RED.CodeChallenge.Models\obj\Debug\net6.0\RED.CodeChallenge.Models.csproj.AssemblyReference.cache
+C:\Code\redCodeChallenge\RED.CodeChallenge\RED.CodeChallenge.Models\obj\Debug\net6.0\RED.CodeChallenge.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\redCodeChallenge\RED.CodeChallenge\RED.CodeChallenge.Models\obj\Debug\net6.0\RED.CodeChallenge.Models.AssemblyInfoInputs.cache
+C:\Code\redCodeChallenge\RED.CodeChallenge\RED.CodeChallenge.Models\obj\Debug\net6.0\RED.CodeChallenge.Models.AssemblyInfo.cs
+C:\Code\redCodeChallenge\RED.CodeChallenge\RED.CodeChallenge.Models\obj\Debug\net6.0\RED.CodeChallenge.Models.csproj.CoreCompileInputs.cache
+C:\Code\redCodeChallenge\RED.CodeChallenge\RED.CodeChallenge.Models\obj\Debug\net6.0\RED.CodeChallenge.Models.dll
+C:\Code\redCodeChallenge\RED.CodeChallenge\RED.CodeChallenge.Models\obj\Debug\net6.0\refint\RED.CodeChallenge.Models.dll
+C:\Code\redCodeChallenge\RED.CodeChallenge\RED.CodeChallenge.Models\obj\Debug\net6.0\RED.CodeChallenge.Models.pdb
+C:\Code\redCodeChallenge\RED.CodeChallenge\RED.CodeChallenge.Models\obj\Debug\net6.0\ref\RED.CodeChallenge.Models.dll
