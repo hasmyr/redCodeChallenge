@@ -46,10 +46,12 @@ const Orders = () => {
         },
     ])
 
+    const baseUrl = "https://redcodechallenge20221005201616.azurewebsites.net"
+
     useEffect(() => {
         const getOrders = async () => {
             try {
-                const response = await fetch('https://localhost:7239/api/Orders');
+                const response = await fetch(`${baseUrl}/api/Orders`);
                 const data = await response.json();
                 setOrders(data);
             }
@@ -73,7 +75,7 @@ const Orders = () => {
                 body: JSON.stringify(deleteList)
             };
 
-            const response = await fetch('https://localhost:7239/api/Orders/Delete', requestOptions);     
+            const response = await fetch(`${baseUrl}/api/Orders/Delete`, requestOptions);     
             setOrders(null);   
             setDeleteList(null);    
         }
@@ -107,7 +109,7 @@ const Orders = () => {
                     body: JSON.stringify(body)
                 };
     
-                const response = await fetch('https://localhost:7239/api/Orders', requestOptions);
+                const response = await fetch(`${baseUrl}/api/Orders`, requestOptions);
                 const data = await response.json();
     
                 var newOrders = [...orders.filter(e => e.id !== orderId)];
@@ -128,7 +130,7 @@ const Orders = () => {
                     body: JSON.stringify(body)
                 };
     
-                const response = await fetch('https://localhost:7239/api/Orders', requestOptions);
+                const response = await fetch(`${baseUrl}/api/Orders`, requestOptions);
                 const data = await response.json();
     
                 setOrders([...orders, data]);
@@ -164,6 +166,11 @@ const Orders = () => {
         return format(formatDate, 'EEEE, d LLLL Y');
     }
 
+    const formatType = (typeId) => {
+        var type = orderTypes.filter(e => e.value == typeId);
+        return type[0].name;
+    }
+
     const resetForm = () => {
         setOrderCustomer('');
         setOrderCreatedBy('');
@@ -193,7 +200,7 @@ const Orders = () => {
                         <TableCell>{ order.id }</TableCell>
                         <TableCell>{ formatDate(order.createdDate) }</TableCell>
                         <TableCell>{ order.createdByUserName }</TableCell>
-                        <TableCell>{ order.orderType }</TableCell>
+                        <TableCell>{ formatType(order.orderType) }</TableCell>
                         <TableCell>{ order.customerName }</TableCell>
                         <TableCell><Button><EditIcon onClick={() => openModalForm(order)}/></Button></TableCell>
                     </TableRow>
@@ -207,7 +214,7 @@ const Orders = () => {
                         <TableCell>{ order.id }</TableCell>
                         <TableCell>{ formatDate(order.createdDate) }</TableCell>
                         <TableCell>{ order.createdByUserName }</TableCell>
-                        <TableCell>{ order.orderType }</TableCell>
+                        <TableCell>{ formatType(order.orderType) }</TableCell>
                         <TableCell>{ order.customerName }</TableCell>
                         <TableCell><Button><EditIcon onClick={() => openModalForm(order)}/></Button></TableCell>
                     </TableRow>
