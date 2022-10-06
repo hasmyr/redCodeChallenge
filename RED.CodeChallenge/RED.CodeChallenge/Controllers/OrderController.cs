@@ -54,6 +54,7 @@ namespace RED.CodeChallenge.Controllers
         {
             try
             {
+                order.CreatedDate = DateTime.Now;
                 _dbContext.Orders.Add(order);
                 _dbContext.SaveChanges();
                 return Ok(order);
@@ -82,19 +83,28 @@ namespace RED.CodeChallenge.Controllers
 
         [HttpPost]
         [Route("Delete")]
-        public IActionResult Delete(string id)
+        public IActionResult Delete(List<string> ids)
         {
             try
             {
-                var order = _dbContext.Orders.FirstOrDefault(e => e.Id == new Guid(id));
-                if(order != null)
+                var idsToDelete = new List<Guid>();
+                foreach(var id in ids)
                 {
-                    _dbContext.Orders.Remove(order);
-                    _dbContext.SaveChanges();
-                    return Ok();
+                    idsToDelete.Add(new Guid(id));
                 }
 
-                return BadRequest($"Order with ID {order.Id} not found");
+                var orders = _dbContext.Orders.Where(e => idsToDelete.Contains(e.Id));
+                if(orders != null)
+                {
+                    foreach(var order in orders)
+                    {
+                        _dbContext.Orders.Remove(order);
+                    }
+
+                    _dbContext.SaveChanges();
+                }
+
+                return Ok();
             }
             catch (Exception e)
             {
